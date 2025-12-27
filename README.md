@@ -1,54 +1,51 @@
-Task Manager API
+# 📝 Task Manager API
 
-📝 About the Project
+A robust backend service designed for efficient daily task management. This API provides a secure way for users to handle their to-do lists with full CRUD functionality, authentication, and persistent storage.
 
-This is a backend API designed to help users manage their daily tasks efficiently. It allows users to create, view, update, and delete tasks (CRUD operations) while ensuring data is stored securely in a database.
+## 🚀 Key Features
+* **User Authentication:** Secure signup and login using JWT (JSON Web Tokens) to protect user data.
+* **Task Management:** Full CRUD (Create, Read, Update, Delete) operations.
+* **Search & Filter:** Advanced filtering to find tasks by **priority** or **due date**.
+* **Database Persistence:** Integrated with a SQL database (PostgreSQL/MySQL) for reliable data storage.
 
-🚀 Key Features
-
-* User Authentication: Secure login and signup to keep user tasks private.
-* Task Management: Full CRUD (Create, Read, Update, Delete) functionality for tasks.
-* Search & Filter: Find tasks easily by their **priority** or **due date**.
-* Database Integration: Uses a SQL database to store information reliably.
-* Containerization: Fully Dockerized for easy setup on any machine.
-
-🛠️ Tech Stack
-
-* Language: [Python (FastAPI/Flask) OR Java (Spring Boot)]
-* Database: SQL (PostgreSQL/MySQL)
-* DevOps: Docker & Docker Compose
-* Tools: Postman (for API testing)
+## 🛠️ Tech Stack
+* **Language:** Python (FastAPI/Flask) / Java (Spring Boot) 
+* **Database:** SQL (PostgreSQL / MySQL)
+* **Authentication:** JWT
+* **Tools:** Postman / Insomnia (for API testing)
 
 ## 🛣️ API Endpoints
 
 | Method | Endpoint | Description |
-| --- | --- | --- |
+| :--- | :--- | :--- |
 | **POST** | `/api/auth/register` | Create a new user account |
-| **POST** | `/api/auth/login` | Login and get a token |
-| **GET** | `/api/tasks` | Get all tasks for the logged-in user |
+| **POST** | `/api/auth/login` | Login and receive Auth Token |
+| **GET** | `/api/tasks` | Fetch all tasks for the logged-in user |
 | **POST** | `/api/tasks` | Create a new task |
 | **PUT** | `/api/tasks/{id}` | Update an existing task |
-| **DELETE** | `/api/tasks/{id}` | Delete a task |
+| **DELETE** | `/api/tasks/{id}` | Remove a task from the database |
 
-💻 How to Run the Project
+## 💻 Local Installation & Setup
 
-1. Prerequisites
+Follow these steps to get the API running on your machine:
 
-* [Python / Java] installed
-* Docker installed (optional)
+### 1. Clone the Repository
+`git clone [https://github.com/your-username/task-manager-api.git](https://github.com/your-username/task-manager-api.git)`
+`cd task-manager-api`
 
-2. Using Docker (Recommended)
+### 2. Set Up the environment
+# Create and activate virtual environment
+`python -m venv venv`
+`venv\Scripts\activate`
 
-  1. Open your terminal in the project folder.
-  2. Run the following command:
-  Bash
-  docker-compose up --build
-  3. The API will be live at `http://localhost:8000` (or your chosen port).
+# Install dependencies
+`pip install -r requirements.txt`
 
-3. Manual Setup
+### 3. Database Configuration
+`DB_URL=postgresql://username:password@localhost:5432/task_manager`
+`SECRET_KEY=your_jwt_secret_key`
 
-1. Install dependencies:
-`[pip install -r requirements.txt OR ./mvnw install]`
-2. Set up your database environment variables.
-3. Start the server:
-`[python main.py OR ./mvnw spring-boot:run]`
+### 4. Run the application
+`python main.py`
+
+The API will be live at: http://localhost:8000
