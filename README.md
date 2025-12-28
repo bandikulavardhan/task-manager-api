@@ -42,8 +42,8 @@ Follow these steps to get the API running on your machine:
 `pip install -r requirements.txt`
 
 ### 3. Database Configuration
-`DB_URL=postgresql://username:password@localhost:5432/task_manager`
-`SECRET_KEY=your_jwt_secret_key`
+`set DB_URL=postgresql://username:VectorSector###5@localhost:5432/task_manager`
+`set SECRET_KEY=your_jwt_secret_key`
 
 ### 4. Run the application
 `python main.py`
